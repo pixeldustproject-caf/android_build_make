@@ -17,10 +17,7 @@
 # This is a build configuration for a full-featured build of the
 # Open-Source part of the tree. It's geared toward a US-centric
 # build quite specifically for the emulator, and might not be
-# entirely appropriate to inherit from for on-device configurations.
-
-PRODUCT_PROPERTY_OVERRIDES := \
-    keyguard.no_require_sim=true
+# entirely appropriate to inherit from for on-device configurations.e
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
