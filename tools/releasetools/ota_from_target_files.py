@@ -821,6 +821,15 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("Target: {}".format(target_info.fingerprint))
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
+
+  script.Print(" ")
+  script.Print(" ____  _          _   ____            _   ")
+  script.Print("|  _ \(_)_  _____| | |  _ \ _   _ ___| |_ ")
+  script.Print("| |_) | \ \/ / _ \ | | | | | | | / __| __|")
+  script.Print("|  __/| |>  <  __/ | | |_| | |_| \__ \ |_ ")
+  script.Print("|_|   |_/_/\_\___|_| |____/ \__,_|___/\__|")
+  script.Print(" ")
+
   device_specific.FullOTA_InstallBegin()
 
   CopyInstallTools(output_zip)
@@ -891,9 +900,11 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
       script.fstab["/system"].mount_point = "/"
 
   script.ShowProgress(0.05, 5)
+  script.Print("Flashing Kernel..")
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.2, 10)
+  script.Print("Enjoy Pixel Dust ROM!");
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:
